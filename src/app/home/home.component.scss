@@ -1,0 +1,59 @@
+.homepage {
+  .bg-overlay {
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url("../../assets//images/car2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+    width: 100%;
+  }
+}
+
+.lead {
+  color: rgb(228, 220, 220);
+}
+
+.btn3d {
+  position:relative;
+  top: -6px;
+  border:0;
+   transition: all 40ms linear;
+   margin-top:20px;
+   margin-left:2px;
+   margin-right:2px;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.btn3d:hover {
+  animation: 0;
+}
+
+.my-class {
+  animation: 0;
+}
+
+.lead a{
+  cursor: pointer;
+}
+
+.btn3d:active:focus,
+.btn3d:focus:hover,
+.btn3d:focus {
+  outline-style:none;
+       outline:medium none;
+}
+.btn3d:active, .btn3d.active {
+  top:2px;
+}
+
+.btn3d.btn-white {
+  color: #666666;
+  box-shadow:0 0 0 1px #ebebeb inset, 0 0 0 2px rgba(255,255,255,0.10) inset, 0 8px 0 0 #f5f5f5, 0 8px 8px 1px rgba(0,0,0,.2);
+  background-color:#fff;
+}
+.btn3d.btn-white:active, .btn3d.btn-white.active {
+  color: #666666;
+  box-shadow:0 0 0 1px #ebebeb inset, 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 3px 1px rgba(0,0,0,.1);
+  background-color:#fff;
+}
+

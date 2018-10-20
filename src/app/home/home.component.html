@@ -1,0 +1,139 @@
+<div class="homepage">
+  <div>
+    <section class="banner-area relative" id="home">
+      <div class="overlay overlay-bg"></div>
+      <div class="container">
+        <div class="row fullscreen d-flex align-items-center justify-content-between">
+          <div class="banner-content col-lg-8 col-md-6 animated zoomIn" style="margin-top:20%">
+            <h2 class="text-white" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: white;letter-spacing: 2px"><span
+                style="font-family:cursive">Need a ride?</span> just call or book online</h2>
+            <h1 class="text-uppercase" style="color: orange; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;letter-spacing: 3px">
+              06181/998525 </h1>
+            <button type="button" [ngClass]="{'my-class': isClassVisible }" (click)="openModal()" class="btn3d btn btn-white btn-lg text-uppercase animated infinite swing slow"><i
+                class="glyphicon glyphicon-pencil" style="padding-right: 10px"></i> Contact us</button>
+          </div>
+          <div class="col-lg-4  col-md-6 col-xs-12 header-right" style="border: 1px solid orange; padding: 10px;float: right;margin-top: 50px;margin-bottom: 3%">
+            <h4 class="pb-30 text-center" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: white">Book
+              Your Texi Online!</h4>
+            <form class="form">
+              <div class="form-group col-lg-12 col-xs-12">
+                <input type="text" class="form-control" placeholder="Firma">
+              </div>
+              <div class="form-group col-lg-6">
+                <input type="text" class="form-control" placeholder="Name">
+              </div>
+              <div class="form-group col-lg-6">
+                <input type="text" class="form-control" placeholder="Vorname">
+              </div>
+              <div class="form-group col-lg-6">
+                <input type="text" class="form-control" placeholder="PLZ">
+              </div>
+              <div class="form-group col-lg-6">
+                <input type="text" class="form-control" placeholder="Ort">
+              </div>
+              <div class="form-group col-lg-12">
+                <input type="text" class="form-control" placeholder="Telephone / Mobile">
+              </div>
+              <div class="form-group col-lg-12">
+                <input type="text" class="form-control" placeholder="Email address">
+              </div>
+              <div class="form-group col-lg-4">
+                <input type="text" class="form-control" placeholder="Personen">
+              </div>
+              <div class="form-group col-lg-4">
+                <input type="text" class="form-control" placeholder="Gepäck(größ)">
+              </div>
+              <div class="form-group col-lg-4">
+                <input type="text" class="form-control" placeholder="Gepäck(klein)">
+              </div>
+              <div class="form-group col-lg-6">
+                <input type="text" class="form-control" placeholder="Datum der Abholung">
+              </div>
+              <div class="form-group col-lg-6">
+                <input type="text" class="form-control" placeholder="Anholzeit (HH:MM)">
+              </div>
+              <div class="form-group col-lg-6">
+                <input type="text" class="form-control" placeholder="Flugnummer">
+              </div>
+              <div class="form-group col-lg-6">
+                <input type="text" class="form-control" placeholder="Abflug / Ankunfzeit">
+              </div>
+              <div class="form-group col-lg-12">
+                <textarea class="form-control" rows="3" id="comment" placeholder="Sontiges / wünsch / Bemekungen"></textarea>
+              </div>
+              <div class="form-group col-lg-12">
+                <button class="btn btn-default btn-lg btn-block text-center text-uppercase" style="background: orange; color: white; border: none">Make
+                  reservation</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <carousel [showIndicators]="false">
+      <slide>
+        <div class="text-center py-5 bg-dark text-white">
+          <h3 style="color:orange">{{serviceData[0].title}}</h3>
+          <div class="lead">
+            <p>{{serviceData[0].partialText}}</p>
+            <a (click)="service(firstService)" class="nav-toggle">Read More</a>
+          </div>
+        </div>
+      </slide>
+      <slide>
+        <div class="text-center py-5 bg-dark text-white">
+          <h3 style="color:orange">{{serviceData[1].title}}</h3>
+          <div class="lead">
+            <p>{{serviceData[1].partialText}}</p>
+            <a (click)="service(secondService)" class="nav-toggle">Read More</a>
+          </div>
+        </div>
+      </slide>
+      <slide>
+        <div class="text-center py-5 bg-dark text-white">
+          <h3 style="color:orange">{{serviceData[2].title}}</h3>
+          <div class="lead">
+            <p>{{serviceData[2].partialText}}</p>
+            <a (click)="service(thirdService)" class="nav-toggle">Read More</a>
+          </div>
+        </div>
+      </slide>
+    </carousel>
+
+    <ng-template #firstService>
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">{{serviceData[0].title}}</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>{{serviceData[0].fullText}}</p>
+      </div>
+    </ng-template>
+
+    <ng-template #secondService>
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">{{serviceData[1].title}}</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>{{serviceData[1].fullText}}</p>
+      </div>
+    </ng-template>
+
+    <ng-template #thirdService>
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">{{serviceData[2].title}}</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>{{serviceData[2].fullText}}</p>
+      </div>
+    </ng-template>
+  </div>

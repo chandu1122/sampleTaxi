@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+
+@import "~@angular/material/prebuilt-themes/purple-green.css"; */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+/*
+Login template using Angular Material
+@author Shashank Tiwari
+*/
+
+ body {
+  background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),url(../src/assets/images/car2.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
