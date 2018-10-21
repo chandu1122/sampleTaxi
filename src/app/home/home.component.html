@@ -15,54 +15,54 @@
           <div class="col-lg-4  col-md-6 col-xs-12 header-right" style="border: 1px solid orange; padding: 10px;float: right;margin-top: 50px;margin-bottom: 3%">
             <h4 class="pb-30 text-center" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: white">Book
               Your Texi Online!</h4>
-            <form class="form">
-              <div class="form-group col-lg-12 col-xs-12">
-                <input type="text" class="form-control" placeholder="Firma">
+            <form class="form" [formGroup]="myForm">
+              <div class="form-group col-lg-6">
+                <input type="text" class="form-control" placeholder="Title" formControlName="Firma">
               </div>
               <div class="form-group col-lg-6">
-                <input type="text" class="form-control" placeholder="Name">
+                <input type="text" class="form-control" placeholder="Name" formControlName="Name">
               </div>
               <div class="form-group col-lg-6">
-                <input type="text" class="form-control" placeholder="Vorname">
+                <input type="text" class="form-control" placeholder="Vorname" formControlName="Vorname">
               </div>
               <div class="form-group col-lg-6">
-                <input type="text" class="form-control" placeholder="PLZ">
+                <input type="text" class="form-control" placeholder="PLZ" formControlName="PLZ">
               </div>
               <div class="form-group col-lg-6">
-                <input type="text" class="form-control" placeholder="Ort">
+                <input type="text" class="form-control" placeholder="Ort" formControlName="Ort">
               </div>
               <div class="form-group col-lg-12">
-                <input type="text" class="form-control" placeholder="Telephone / Mobile">
+                <input type="text" class="form-control" placeholder="Telephone / Mobile" formControlName="Telephone">
               </div>
               <div class="form-group col-lg-12">
-                <input type="text" class="form-control" placeholder="Email address">
+                <input type="text" class="form-control" placeholder="Email address" formControlName="Email">
               </div>
               <div class="form-group col-lg-4">
-                <input type="text" class="form-control" placeholder="Personen">
+                <input type="text" class="form-control" placeholder="Personen" formControlName="Persons">
               </div>
               <div class="form-group col-lg-4">
-                <input type="text" class="form-control" placeholder="Gepäck(größ)">
+                <input type="text" class="form-control" placeholder="Gepäck(größ)" formControlName="Gepackbig">
               </div>
               <div class="form-group col-lg-4">
-                <input type="text" class="form-control" placeholder="Gepäck(klein)">
+                <input type="text" class="form-control" placeholder="Gepäck(klein)" formControlName="gepacksmall">
               </div>
               <div class="form-group col-lg-6">
-                <input type="text" class="form-control" placeholder="Datum der Abholung">
+                <input type="text" class="form-control" placeholder="Datum der Abholung" formControlName="date">
               </div>
               <div class="form-group col-lg-6">
-                <input type="text" class="form-control" placeholder="Anholzeit (HH:MM)">
+                <input type="text" class="form-control" placeholder="Anholzeit (HH:MM)" formControlName="Time">
               </div>
               <div class="form-group col-lg-6">
-                <input type="text" class="form-control" placeholder="Flugnummer">
+                <input type="text" class="form-control" placeholder="Flugnummer" formControlName="Flugnumber">
               </div>
               <div class="form-group col-lg-6">
-                <input type="text" class="form-control" placeholder="Abflug / Ankunfzeit">
+                <input type="text" class="form-control" placeholder="Abflug / Ankunfzeit" formControlName="pickuptime">
               </div>
               <div class="form-group col-lg-12">
-                <textarea class="form-control" rows="3" id="comment" placeholder="Sontiges / wünsch / Bemekungen"></textarea>
+                <textarea class="form-control" rows="3" id="comment" placeholder="Sontiges / wünsch / Bemekungen" formControlName="Note"></textarea>
               </div>
               <div class="form-group col-lg-12">
-                <button class="btn btn-default btn-lg btn-block text-center text-uppercase" style="background: orange; color: white; border: none">Make
+                <button class="btn btn-default btn-lg btn-block text-center text-uppercase" (click)="clicked()" style="background: orange; color: white; border: none">Make
                   reservation</button>
               </div>
             </form>

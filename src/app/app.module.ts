@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, enableProdMode } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule , FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
@@ -16,7 +15,8 @@ import { ModalModule } from 'ngx-bootstrap';
 import { MatFormFieldModule, MatInputModule, MatIconModule, MatDialogModule } from '@angular/material';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
-
+import { HttpClientModule } from  '@angular/common/http';
+import { FormService } from './form.service';
 enableProdMode();
 
 @NgModule({
@@ -41,9 +41,10 @@ enableProdMode();
     ReactiveFormsModule,
     MatFormFieldModule,
     MatDialogModule,
-    HttpModule,
+    HttpClientModule,
+
   ],
-  providers: [AuthenticationService, SharedService],
+  providers: [AuthenticationService, SharedService, FormService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
