@@ -1,21 +1,21 @@
-<form class="example-form">
+<form class="example-form" [formGroup]="myForm">
   <mat-form-field class="example-full-width">
     <mat-icon matSuffix>contact_mail</mat-icon>
-    <input matInput placeholder="Full Name">
+    <input matInput placeholder="Full Name" formControlName = "Name">
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Email">
+    <input matInput placeholder="Email" formControlName="Email">
     <mat-icon matSuffix>email</mat-icon>
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Your Phone">
+    <input matInput placeholder="Your Phone" formControlName="Phone">
     <mat-icon matSuffix>phone</mat-icon>
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
-    <textarea matInput placeholder="Your Message"></textarea>
+    <textarea matInput placeholder="Your Message" formControlName="Message"></textarea>
     <mat-icon matSuffix>message</mat-icon>
   </mat-form-field>
 

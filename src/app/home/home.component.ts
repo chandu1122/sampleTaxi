@@ -8,6 +8,7 @@ import { MatDialog, MatDialogRef } from '@angular/material';
 import {serviceData} from '../../assets/data';
 import {Servicetypes} from '../../assets/data';
 import { FormService } from  '../form.service';
+import {MatSnackBar} from '@angular/material';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -19,11 +20,12 @@ export class HomeComponent {
   message: string;
   isClassVisible: boolean;
   serviceData: Servicetypes[] = serviceData;
+  responseSuccess: String;
 
   fileNameDialogRef: MatDialogRef<KontaktComponent>;
     myForm: FormGroup;
 
-    constructor(private fb: FormBuilder, private modalService: BsModalService, private dialog: MatDialog, private formService: FormService) {
+    constructor(public snackBar: MatSnackBar, private fb: FormBuilder, private modalService: BsModalService, private dialog: MatDialog, private formService: FormService) {
   this.myForm = this.fb.group({
     Firma : '',
     Name: '',
@@ -41,6 +43,7 @@ export class HomeComponent {
     pickuptime: '',
     Note: ''
   })
+  
     }
 
     service(template: TemplateRef<any>) {
@@ -55,10 +58,22 @@ export class HomeComponent {
       });
     }
     clicked(){
-      this.formService.saveData(this.myForm.value).then(res=>{
-        console.log(res)
-      })
-      console.log(this.myForm)
-    }
+      this.formService.saveData(this.myForm.value).then((res:any)=>{
+       if(res.success == false){
+         this.openSnackBar(res.message, '');
 
+       } else{
+         this.openSnackBar(res.message, '');
+       }
+      this.responseSuccess = res.message;
+        
+      })
+    }
+    
+  
+    openSnackBar(message: string, action: string) {
+      this.snackBar.open(message, '', {
+        duration: 2000,
+      });
+    }
 }

@@ -17,6 +17,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
 import { HttpClientModule } from  '@angular/common/http';
 import { FormService } from './form.service';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 enableProdMode();
 
 @NgModule({
@@ -42,6 +44,7 @@ enableProdMode();
     MatFormFieldModule,
     MatDialogModule,
     HttpClientModule,
+    MatSnackBarModule
 
   ],
   providers: [AuthenticationService, SharedService, FormService],
